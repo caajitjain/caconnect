@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Connect - Professional Knowledge Sharing Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>CA Connect</h1>
+                <p>Knowledge Sharing Platform for Chartered Accountants</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#questions">Browse Questions</a></li>
+                    <li><a href="#ask">Ask a Question</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button id="loginBtn">Login</button>
+                <button id="registerBtn">Register</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Professional Knowledge Exchange</h2>
+                    <p>Connect with experienced Chartered Accountants to get answers on taxation, international taxation, finance, audit, and more.</p>
+                    <div class="hero-buttons">
+                        <button id="becomeMentorBtn">Become a Mentor</button>
+                        <button id="findAnswerBtn">Find an Answer</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Questions Section -->
+        <section id="questions" class="featured-questions">
+            <div class="container">
+                <h2>Recent Questions & Answers</h2>
+                <div class="questions-container" id="questionsContainer">
+                    <!-- Questions will be loaded here dynamically -->
+                    <div class="loading">Loading recent questions...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ask Question Section -->
+        <section id="ask" class="ask-question">
+            <div class="container">
+                <h2>Ask a Question</h2>
+                <div class="question-form">
+                    <form id="questionForm">
+                        <div class="form-group">
+                            <label for="questionTitle">Question Title</label>
+                            <input type="text" id="questionTitle" required placeholder="Summarize your question in a short title">
+                        </div>
+                        <div class="form-group">
+                            <label for="questionCategory">Category</label>
+                            <select id="questionCategory" required>
+                                <option value="">Select a category</option>
+                                <option value="taxation">Taxation</option>
+                                <option value="international-taxation">International Taxation</option>
+                                <option value="audit">Audit</option>
+                                <option value="finance">Finance</option>
+                                <option value="compliance">Compliance</option>
+                                <option value="accounting">Accounting</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="questionDetails">Question Details</label>
+                            <textarea id="questionDetails" rows="8" required placeholder="Provide detailed information about your question"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit Question</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About CA Connect</h2>
+                <p>CA Connect is a free platform designed to facilitate knowledge sharing between Chartered Accountants. Our mission is to create a collaborative community where professionals can share expertise, solve complex problems, and grow together.</p>
+                <p class="creator-info">Created by Ajit Jain, CA, ACA (UK), CS, DITT (UK)</p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-users"></i>
+                        <h3>Expert Mentorship</h3>
+                        <p>Connect with experienced CAs who volunteer their time to help fellow professionals.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Diverse Expertise</h3>
+                        <p>Get answers across various domains including taxation, audit, finance, and more.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Knowledge Repository</h3>
+                        <p>Access a growing database of professional Q&As from verified Chartered Accountants.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>CA Connect</h3>
+                    <p>Knowledge Sharing Platform</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#questions">Browse Questions</a></li>
+                        <li><a href="#ask">Ask a Question</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>Email: support@caconnect.org</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CA Connect. All rights reserved.</p>
+                <p class="developer-credit">Built by: Ajit Jain, CA, ACA (UK), CS, DITT (UK)</p>
+                <p class="contact-link">Contact: <a href="https://wa.link/ng1mz2" target="_blank">wa.link/ng1mz2</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Containers -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="submit-btn">Login</button>
+                </div>
+                <p class="form-link">Not registered? <a href="#" id="showRegisterModal">Register here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Register</h2>
+            <div class="tab-container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="mentee">As Mentee</button>
+                    <button class="tab-btn" data-tab="mentor">As Mentor</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div id="mentee" class="tab-pane active">
+                        <form id="menteeForm">
+                            <div class="form-group">
+                                <label for="menteeName">Full Name</label>
+                                <input type="text" id="menteeName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="menteeEmail">Email</label>
+                                <input type="email" id="menteeEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="menteePassword">Password</label>
+                                <input type="password" id="menteePassword" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="menteeConfirmPassword">Confirm Password</label>
+                                <input type="password" id="menteeConfirmPassword" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="submit-btn">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div id="mentor" class="tab-pane">
+                        <form id="mentorForm">
+                            <div class="form-group">
+                                <label for="mentorName">Full Name</label>
+                                <input type="text" id="mentorName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mentorMembershipNumber">ICAI Membership Number</label>
+                                <input type="text" id="mentorMembershipNumber" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mentorEmail">Email</label>
+                                <input type="email" id="mentorEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mentorSpecialization">Specialization (select all that apply)</label>
+                                <div class="checkbox-group">
+                                    <label><input type="checkbox" name="specialization" value="taxation"> Taxation</label>
+                                    <label><input type="checkbox" name="specialization" value="international-taxation"> International Taxation</label>
+                                    <label><input type="checkbox" name="specialization" value="audit"> Audit</label>
+                                    <label><input type="checkbox" name="specialization" value="finance"> Finance</label>
+                                    <label><input type="checkbox" name="specialization" value="compliance"> Compliance</label>
+                                    <label><input type="checkbox" name="specialization" value="accounting"> Accounting</label>
+                                    <label><input type="checkbox" name="specialization" value="other"> Other</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="mentorExperience">Years of Experience</label>
+                                <select id="mentorExperience" required>
+                                    <option value="">Select years of experience</option>
+                                    <option value="0-2">0-2 years</option>
+                                    <option value="3-5">3-5 years</option>
+                                    <option value="6-10">6-10 years</option>
+                                    <option value="11-15">11-15 years</option>
+                                    <option value="16+">16+ years</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="mentorPassword">Password</label>
+                                <input type="password" id="mentorPassword" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mentorConfirmPassword">Confirm Password</label>
+                                <input type="password" id="mentorConfirmPassword" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="submit-btn">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <p class="form-link">Already registered? <a href="#" id="showLoginModal">Login here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Answer Question Modal -->
+    <div class="modal" id="answerModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Answer Question</h2>
+            <div class="question-details" id="modalQuestionDetails">
+                <!-- Question details will be loaded here -->
+            </div>
+            <form id="answerForm">
+                <div class="form-group">
+                    <label for="answerContent">Your Answer</label>
+                    <textarea id="answerContent" rows="10" required placeholder="Provide your professional answer to this question"></textarea>
+                </div>
+                <input type="hidden" id="questionId">
+                <button type="submit" class="submit-btn">Submit Answer</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
